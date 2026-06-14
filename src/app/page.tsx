@@ -7,6 +7,7 @@ import { ContentSections } from "@/components/ContentSections";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { FaqSection } from "@/components/FaqSection";
 import { SiteFooter } from "@/components/SiteFooter";
+import { ExitIntentPopup } from "@/components/ExitIntentPopup";
 
 export default function Home() {
   return (
@@ -75,6 +76,9 @@ export default function Home() {
 
       {/* Site Footer */}
       <SiteFooter />
+
+      {/* Exit-Intent Offer Popup */}
+      <ExitIntentPopup />
     </>
   );
 }
