@@ -8,6 +8,7 @@ import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { FaqSection } from "@/components/FaqSection";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ExitIntentPopup } from "@/components/ExitIntentPopup";
+import { BottomBar } from "@/components/BottomBar";
 
 export default function Home() {
   return (
@@ -79,6 +80,9 @@ export default function Home() {
 
       {/* Exit-Intent Offer Popup */}
       <ExitIntentPopup />
+
+      {/* Fixed bottom CTA bar */}
+      <BottomBar />
     </>
   );
 }
