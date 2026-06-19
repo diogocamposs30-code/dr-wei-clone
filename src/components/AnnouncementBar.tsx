@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-const TEXT_ITEMS = [
+const DEFAULT_ITEMS = [
   "⚡ FREE BONUS: 14-Day Ancient Energy Plan included today only",
   "🔥 Over 3,200 men restored their energy using these recipes",
   "✦ Limited time: Get both ebooks for just $17",
@@ -9,7 +9,11 @@ const TEXT_ITEMS = [
 // Render 4 copies for seamless infinite loop at any viewport width
 const COPIES = 4;
 
-export function AnnouncementBar() {
+interface AnnouncementBarProps {
+  items?: readonly string[];
+}
+
+export function AnnouncementBar({ items = DEFAULT_ITEMS }: AnnouncementBarProps) {
   return (
     <div
       className={cn("overflow-hidden py-3 md:py-4")}
@@ -24,7 +28,7 @@ export function AnnouncementBar() {
         )}
       >
         {Array.from({ length: COPIES }).flatMap((_, copyIndex) =>
-          TEXT_ITEMS.map((text, itemIndex) => (
+          items.map((text, itemIndex) => (
             <p
               key={`${copyIndex}-${itemIndex}`}
               className="whitespace-nowrap shrink-0 announcement-ticker-text"
